@@ -39,7 +39,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.app.rtmp_publisher_example"
+        applicationId "com.app.rtmp_publisher_youinroll"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

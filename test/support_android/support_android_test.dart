@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'rtmp_publisher_Youinroll/new/src/camera_testing.dart';
-import 'rtmp_publisher_Youinroll/new/src/support_android/camera.dart';
-import 'rtmp_publisher_Youinroll/new/src/support_android/camera_info.dart';
+import 'package:rtmp_publisher/new/src/camera_testing.dart';
+import 'package:rtmp_publisher/new/src/support_android/camera.dart';
+import 'package:rtmp_publisher/new/src/support_android/camera_info.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 

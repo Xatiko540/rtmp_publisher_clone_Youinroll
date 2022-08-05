@@ -1,16 +1,4 @@
-## 0.3.7
+## 1.0.0
 
-* Export full event info
-
-## 0.3.6
-
-* Update ios podspec
-
-## 0.3.5
-
-* Update example
-
-## 0.3.4
-
-* Update android, ios build
-
+* You're about to publish a package that opts into null safety.
+  The previous version (0.3.7) isn't opted in.

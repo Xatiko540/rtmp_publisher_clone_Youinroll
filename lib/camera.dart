@@ -41,7 +41,7 @@ enum ResolutionPreset {
 }
 
 // ignore: inference_failure_on_function_return_type
-typedef onLatestImageAvailable = Function(CameraImage image);
+typedef onLatestImageAvailable = dynamic Function(CameraImage image);
 
 /// Returns the resolution preset as a String.
 String serializeResolutionPreset(ResolutionPreset resolutionPreset) {
@@ -59,7 +59,6 @@ String serializeResolutionPreset(ResolutionPreset resolutionPreset) {
     case ResolutionPreset.low:
       return 'low';
   }
-  throw ArgumentError('Unknown ResolutionPreset value');
 }
 
 CameraLensDirection _parseCameraLensDirection(String string) {
@@ -331,7 +330,7 @@ class CameraController extends ValueNotifier<CameraValue> {
     this.description,
     this.resolutionPreset, {
     this.enableAudio = true,
-    this.streamingPreset = null,
+    this.streamingPreset,
     this.androidUseOpenGL = false,
   }) : super(CameraValue.uninitialized());
 
@@ -344,6 +343,7 @@ class CameraController extends ValueNotifier<CameraValue> {
 
   int? _textureId;
   bool _isDisposed = false;
+  // ignore: cancel_subscriptions
   StreamSubscription<dynamic>? _eventSubscription;
   StreamSubscription<dynamic>? _imageStreamSubscription;
   Completer<void>? _creatingCompleter;

@@ -1,11 +1,11 @@
-name: rtmp_publisher
-description: Controlling the camera on Android and iOS plus rtmp live streaming support. Based off the Camera plugin.
-version: 0.3.7
-homepage: https://github.com/nhancv/flutter_rtmp_publisher
+name: rtmp_publisher_youinroll
+description: Controlling the camera on Android and iOS plus rtmp live streaming support. Based off the Camera plugin Social Network Community Youinroll Flutter.
+version: 1.0.0
+homepage: https://github.com/Xatiko540/-Social-Network-Community-Youinroll-Flutter.
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=1.10.0"
+  flutter: ">=3.0.5"
 
 dependencies:
   flutter:

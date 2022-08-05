@@ -308,6 +308,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
   String timestamp() => DateTime.now().millisecondsSinceEpoch.toString();
 
   void showInSnackBar(String message) {
+    // ignore: deprecated_member_use
     _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text(message)));
   }
 
@@ -529,6 +530,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
               onChanged: (String str) => result = str,
             ),
             actions: <Widget>[
+              // ignore: deprecated_member_use
               new FlatButton(
                 child: new Text(
                     MaterialLocalizations.of(context).cancelButtonLabel),
@@ -536,6 +538,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
                   Navigator.of(context).pop();
                 },
               ),
+              // ignore: deprecated_member_use
               FlatButton(
                 child: Text(MaterialLocalizations.of(context).okButtonLabel),
                 onPressed: () {

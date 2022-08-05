@@ -19,7 +19,6 @@ import java.util.*
 
 /** Provides various utilities for camera.  */
 object CameraUtils {
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun computeBestPreviewSize(cameraName: String, presetArg: ResolutionPreset): Size {
         var preset = presetArg
         if (preset.ordinal > ResolutionPreset.high.ordinal) {
@@ -29,7 +28,6 @@ object CameraUtils {
         return Size(profile.videoFrameWidth, profile.videoFrameHeight)
     }
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun computeBestCaptureSize(streamConfigurationMap: StreamConfigurationMap): Size {
         // For still image captures, we use the largest available size.
         return Collections.max(
@@ -38,7 +36,6 @@ object CameraUtils {
     }
 
     @Throws(CameraAccessException::class)
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun getAvailableCameras(activity: Activity): List<Map<String, Any>> {
         val cameraManager = activity.getSystemService(Context.CAMERA_SERVICE) as CameraManager
         val cameraNames = cameraManager.cameraIdList
@@ -47,10 +44,9 @@ object CameraUtils {
             val details = HashMap<String, Any>()
             val characteristics = cameraManager.getCameraCharacteristics(cameraName)
             details["name"] = cameraName
-            val sensorOrientation = characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION)
-            details["sensorOrientation"] = sensorOrientation
-            val lensFacing = characteristics.get(CameraCharacteristics.LENS_FACING)
-            when (lensFacing) {
+            val sensorOrientation: Int? = characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION)
+
+            when (characteristics.get(CameraCharacteristics.LENS_FACING)) {
                 CameraMetadata.LENS_FACING_FRONT -> details["lensFacing"] = "front"
                 CameraMetadata.LENS_FACING_BACK -> details["lensFacing"] = "back"
                 CameraMetadata.LENS_FACING_EXTERNAL -> details["lensFacing"] = "external"
